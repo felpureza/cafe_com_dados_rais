@@ -64,8 +64,11 @@ Através de um sistema fornacido pelo Governo Federal, que se chama Programa Ger
 
 ## Tá, mas qual a moral dessa história?
 Calma, senhor apressadinho, só estou começando.
+
 Primeiro, é importante entender como a base funciona porque talvez ela não se encaixe para a análise que você queira fazer. Ela não te serve, por exemplo, para um estudo sobre os empregados domésticos.
+
 Segundo, saber que os dados são informações administrativas postadas em um sistema explica o porquê de algumas variáveis serem problemáticas.
+
 Por fim, e talvez o que acho mais importante, é que não existe informalidade no mundinho RAIS BR.
 
 # Análise
@@ -73,6 +76,7 @@ Agora que vocês entenderam um pouco sobre como a base é construída, it's time
 
 ## Organização
 Existem dois tipos de RAIS: a de vínculos e a de estabelecimentos. Para esse minicurso, vamos analisar a RAIS vínculos, em que cada observação é um contrato (não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal. O Július de Todo Mundo Odeia o Cris, por exemplo, apareceria duas vezes na RAIS se os empregos dele são formalizados). Caso a sua vontade seja analisar as intituições em geral, utiliza-se a RAIS estabelecimentos.
+
 Além disso, é possível classificar entre a base identificada e não-identificada. A diferença entre uma e outra é que a primeira possui algumas variáveis que identificam quem é o contratado (CPF e nome) e quem é a instituição (CNPJ e nome dela), enquanto a segunda não possui essas informações. Por isso, para ter acesso aos dados identificados, é necessário preencher alguns formulários do Ministério da Economia, ao passo que a não-identificada é de acesso público.
 
 Existe também os dados da Caged, que são dados mensais bem parecidos com a RAIS (inclusive, podem ser extraídos no mesmo link). Não vou entrar em detalhes maiores para não sairmos do nosso foco.
