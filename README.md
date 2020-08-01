@@ -1,5 +1,5 @@
 # Café com Dados - RAIS
-Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS). Essa apresentação é focada para o Stata.
+Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS). Saber o nome dela é importante pois desde o começo é indicado que sua periodicidade é anual. Essa apresentação é focada para o Stata.
 
 #  Pré-análise
 Antes de analisar com mais profundidade as informações, é necessário entender questões relacionadas a como a base de dados é construída. Para essa seção, são usadas as informações disponibilizadas pelo Ministério da Economia para a RAIS de 2019.
@@ -69,23 +69,27 @@ Segundo, saber que os dados são informações administrativas postadas em um si
 Por fim, e talvez o que acho mais importante, é que não existe informalidade no mundinho RAIS BR.
 
 # Análise
-Agora que vocês entenderam um pouco sobre como a base é construída, it's time for the estimations! Pero antes, vamos falar um pouco de como se tem organizado e analisado as bases da RAIS
+Agora que vocês entenderam um pouco sobre como a base é construída, it's time for the estimations! Pero antes, vamos falar um pouco de como se tem organizado e analisado as bases da RAIS.
 
 ## Organização
-Existem dois tipos de RAIS: a de vínculos e a de estabelecimentos. Para esse minicurso, vamos analisar a RAIS vínculos, em que cada observação é um contrato (não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal). Caso a sua vontade seja analisar as intituições em geral, utiliza-se a RAIS estabelecimentos.
+Existem dois tipos de RAIS: a de vínculos e a de estabelecimentos. Para esse minicurso, vamos analisar a RAIS vínculos, em que cada observação é um contrato (não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal. O Július de Todo Mundo Odeia o Cris, por exemplo, apareceria duas vezes na RAIS se os empregos dele são formalizados). Caso a sua vontade seja analisar as intituições em geral, utiliza-se a RAIS estabelecimentos.
 Além disso, é possível classificar entre a base identificada e não-identificada. A diferença entre uma e outra é que a primeira possui algumas variáveis que identificam quem é o contratado (CPF e nome) e quem é a instituição (CNPJ e nome dela), enquanto a segunda não possui essas informações. Por isso, para ter acesso aos dados identificados, é necessário preencher alguns formulários do Ministério da Economia, ao passo que a não-identificada é de acesso público.
 
-## O dicionário
-Deixei um arquivo .xls para acesso ao dicionário da RAIS. Caso não consiga fazê-lo, é possível obtê-lo através do link http://pdet.mte.gov.br/microdados-rais-e-caged. Particularmente, acho que o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que a premissa de compilar a base a partir de dados administrativos 
+Existe também os dados da Caged, que são dados mensais bem parecidos com a RAIS (inclusive, podem ser extraídos no mesmo link). Não vou entrar em detalhes maiores para não sairmos do nosso foco.
+
+## Dicionário
+Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2018, a mais recente até o momento. Caso não consiga fazê-lo, é possível obtê-lo através do link http://pdet.mte.gov.br/microdados-rais-e-caged. Particularmente, acho que o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que ela não possui tantas variáveis. Vamos de abertura dos arquivos. Se for baixar do site, lembre que estamos analisando as informações da base de vínculos.
 
 ## A base de dados
-
+O fato de a RAIS ser organizada pelos registros administrativos das organizações (seção "Quem deve declarar a RAIS?") possibilita que ela seja chamada de "Censo" do mercado de trabalho FORMAL brasileiro. Essa informação é uma faca de dois gumes, pois de um lado dificilmente você não vai ter uma boa amostra para a sua análise, e do outro lado as estimações podem exigir um maior esforço computacional (tudo no mundo existe num fino e lindo equilíbrio). Além disso, um grande problema que essa base possui que também é oriunda desse problema são as omissões e erros que ocorrem na hora do preenchimento das informações no sistema.  
 
 
 # Links de referências
 
 1) Site da RAIS: http://www.rais.gov.br/sitio/index.jsf
 2) Onde se extrai os microdados da RAIS: http://pdet.mte.gov.br/microdados-rais-e-caged
+3) Explicação da CAGED e outros detalhes da RAIS: https://guilhermejacob.github.io/2017/11/rais-caged-r/
+
 
 
 
