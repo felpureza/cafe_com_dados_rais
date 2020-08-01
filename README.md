@@ -1,5 +1,5 @@
 # Café com Dados - RAIS
-Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS).
+Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS). Essa apresentação é focada para o Stata.
 
 #  Pré-análise
 Antes de analisar com mais profundidade as informações, é necessário entender questões relacionadas a como a base de dados é construída. Para essa seção, são usadas as informações disponibilizadas pelo Ministério da Economia para a RAIS de 2019.
@@ -68,6 +68,24 @@ Primeiro, é importante entender como a base funciona porque talvez ela não se 
 Segundo, saber que os dados são informações administrativas postadas em um sistema explica o porquê de algumas variáveis serem problemáticas.
 Por fim, e talvez o que acho mais importante, é que não existe informalidade no mundinho RAIS BR.
 
+# Análise
+Agora que vocês entenderam um pouco sobre como a base é construída, it's time for the estimations! Pero antes, vamos falar um pouco de como se tem organizado e analisado as bases da RAIS
+
+## Organização
+Existem dois tipos de RAIS: a de vínculos e a de estabelecimentos. Para esse minicurso, vamos analisar a RAIS vínculos, em que cada observação é um contrato (não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal). Caso a sua vontade seja analisar as intituições em geral, utiliza-se a RAIS estabelecimentos.
+Além disso, é possível classificar entre a base identificada e não-identificada. A diferença entre uma e outra é que a primeira possui algumas variáveis que identificam quem é o contratado (CPF e nome) e quem é a instituição (CNPJ e nome dela), enquanto a segunda não possui essas informações. Por isso, para ter acesso aos dados identificados, é necessário preencher alguns formulários do Ministério da Economia, ao passo que a não-identificada é de acesso público.
+
+## O dicionário
+Deixei um arquivo .xls para acesso ao dicionário da RAIS. Caso não consiga fazê-lo, é possível obtê-lo através do link http://pdet.mte.gov.br/microdados-rais-e-caged. Particularmente, acho que o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que a premissa de compilar a base a partir de dados administrativos 
+
+## A base de dados
+
+
+
+# Links de referências
+
+1) Site da RAIS: http://www.rais.gov.br/sitio/index.jsf
+2) Onde se extrai os microdados da RAIS: http://pdet.mte.gov.br/microdados-rais-e-caged
 
 
 
