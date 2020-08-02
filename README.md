@@ -2,7 +2,7 @@
 Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS). Saber o nome dela é importante pois desde o começo é indicado que sua periodicidade é anual. Essa apresentação é focada para o Stata.
 
 #  Pré-análise
-Antes de analisar com mais profundidade as informações, é necessário entender questões relacionadas a como a base de dados é construída. Para essa seção, são usadas as informações disponibilizadas pelo Ministério da Economia para a RAIS de 2019.
+Antes de analisar com mais profundidade os microdados, é necessário entender questões relacionadas a como a base de dados é construída. Para essa seção, são usadas as informações disponibilizadas pelo Ministério da Economia para a RAIS de 2019.
 
 ## O que é a RAIS?
 A RAIS não é nada mais que um recurso do Governo Federal para coletar informações sobre o mercado de trabalho formal brasileiro. De acordo com o Ministério da Economia, o seu objetivo é:
@@ -62,38 +62,40 @@ Abaixo, segue a listagem de quem não deve ser relacionado na RAIS.
 ## Como é declarada?
 Através de um sistema fornacido pelo Governo Federal, que se chama Programa Gerador de Declaração RAIS (GDRAIS2019).
 
-## Tá, mas qual a moral dessa história?
-Calma, senhor apressadinho, só estou começando.
+## Em resumo, o que eu tenho com essas informações?
+A partir disso, eu tenho que:
 
-Primeiro, é importante entender como a base funciona porque talvez ela não se encaixe para a análise que você queira fazer. Ela não te serve, por exemplo, para um estudo sobre os empregados domésticos.
+1) Pelo próprio nome da RAIS, eu sei que ela possui uma periodicidade anual. A pesar disso, os pesquisadores costumam usar a foto dos dias 31/12 para fazer as suas análises. Existem variáveis que tornam possível extrair essa informação, como é possível visualizar no dicionário.
 
-Segundo, saber que os dados são informações administrativas postadas em um sistema explica o porquê de algumas variáveis serem problemáticas.
+2) Saber quem entra ou quem não entra na base é importante para o desenho da investigação. Sabemos que vários atores do mercado de trabalho formal estão inclusos nos microdados, como celetistas, servidores públicos, trabalhadores avulsos, aprendizes e dirigentes sindicais. Entretanto, a base acaba por não incluir temas importantes, como a informalidade, o estágio e o trabalho doméstico.
 
-Por fim, e talvez o que acho mais importante, é que não existe informalidade no mundinho RAIS BR.
+3) É super importante saber qual foi forma como as informações são extraídas. No caso de informações de questionário, por exemplo, eu posso consultar como uma pergunta é feita caso não tenha entendido uma informação do dicionário. No caso da RAIS, o preenchimento de um formulário dentro um sistema dá mais nuances a certas variáveis da base, principalmente no que diz respeito às informações pessoais. Como em geral existe um grupo de pessoas dentro de uma organização que preenche esse sistema, é bem comum que haja omissões e erros.
 
 # Análise
-Agora que vocês entenderam um pouco sobre como a base é construída, it's time for the estimations! Pero antes, vamos falar um pouco de como se tem organizado e analisado as bases da RAIS.
+Agora que já entendemos um pouco sobre como a base é construída e como isso impacta, já podemos falar um pouco de como os microdados são organizados e sobre o seu dicionário.
 
 ## Organização
-Existem dois tipos de RAIS: a de vínculos e a de estabelecimentos. Para esse minicurso, vamos analisar a RAIS vínculos, em que cada observação é um contrato (não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal. O Július de Todo Mundo Odeia o Cris, por exemplo, apareceria duas vezes na RAIS se os empregos dele são formalizados). Caso a sua vontade seja analisar as intituições em geral, utiliza-se a RAIS estabelecimentos.
+Nessa parte, peguei algumas informações do GitHub do Guilherme Jacob e de alguns materiais que ele usa, que fez algo parecido com o que estou fazendo mas usando o R. O link está disposto no final da apresentação.
 
-Além disso, é possível classificar entre a base identificada e não-identificada. A diferença entre uma e outra é que a primeira possui algumas variáveis que identificam quem é o contratado (CPF e nome) e quem é a instituição (CNPJ e nome dela), enquanto a segunda não possui essas informações. Por isso, para ter acesso aos dados identificados, é necessário preencher alguns formulários do Ministério da Economia, ao passo que a não-identificada é de acesso público.
+Existem dois tipos de RAIS. A primeira delas é a de vínculos, em que cada observação de la é um contrato. Aqui, peço cuidado para não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal. O Július de Todo Mundo Odeia o Cris, por exemplo, apareceria duas vezes na RAIS se os empregos dele são formalizados. Dessa forma, ela é mais utilizada para análises de relações trabalhistas. O segundo tipo é a de estabelecimentos, ideal caso o seu foco sejam as empresas.
 
-Existe também os dados da Caged, que são dados mensais bem parecidos com a RAIS (inclusive, podem ser extraídos no mesmo link). Não vou entrar em detalhes maiores para não sairmos do nosso foco.
+Existe também os dados da Caged, que são dados mensais bem parecidos com a RAIS que, inclusive, podem ser extraídos no mesmo link que a RAIS. Não vou entrar em detalhes maiores nesse sentido para não sairmos do nosso foco.
 
 ## Dicionário
-Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2018, a mais recente até o momento. Caso não consiga fazê-lo, é possível obtê-lo através do link http://pdet.mte.gov.br/microdados-rais-e-caged. Particularmente, acho que o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que ela não possui tantas variáveis. Vamos de abertura dos arquivos. Se for baixar do site, lembre que estamos analisando as informações da base de vínculos.
+Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2018, a mais recente até o momento. Caso não consiga fazê-lo, é possível obtê-lo através do link de referências que deixei mais embaixo. Na minha não tão humilde opinião (sou de leão), o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que ela não possui tantas variáveis. Sugiro que esteja sempre com esse arquivo aberto, pois ele salva vidas.
 
 ## A base de dados
-O fato de a RAIS ser organizada pelos registros administrativos das organizações (seção "Quem deve declarar a RAIS?") possibilita que ela seja chamada de "Censo" do mercado de trabalho FORMAL brasileiro. Essa informação é uma faca de dois gumes, pois de um lado dificilmente você não vai ter uma boa amostra para a sua análise, e do outro lado as estimações podem exigir um maior esforço computacional (tudo no mundo existe num fino e lindo equilíbrio). Além disso, um grande problema que essa base possui que também é oriunda desse problema são as omissões e erros que ocorrem na hora do preenchimento das informações no sistema.  
+Hora de trabalhar com a extração da base! Quero que abra o segundo link na aba seguinte, aperte um botão verde escrito "clique aqui" (ao lado de "Para acessar a base"), e siga: RAIS/ - 2017/ - AP2017.7z/ para baixar o arquivo .txt referente ao Amapá do ano de 2017. 
 
 
 # Links de referências
 
 1) Site da RAIS: http://www.rais.gov.br/sitio/index.jsf
-2) Onde se extrai os microdados da RAIS: http://pdet.mte.gov.br/microdados-rais-e-caged
-3) Explicação da CAGED e outros detalhes da RAIS: https://guilhermejacob.github.io/2017/11/rais-caged-r/
-
+2) Onde se extrai os microdados da RAIS e o seu layout: http://pdet.mte.gov.br/microdados-rais-e-caged
+3) Explicação da CAGED e outros detalhes da RAIS, por Guilherme Jacob: https://guilhermejacob.github.io/2017/11/rais-caged-r/
+4) Um apresentação do Luiz Júnior, com outros detalhes: https://www.ufjf.br/econs/files/2010/05/RAIS-e-CAGED-Introdu%c3%a7%c3%a3o-%c3%a0s-Bases-de-Dados-12-de-Abril-de-2010.pdf
+5) Simples Nacional: http://www8.receita.fazenda.gov.br/SimplesNacional/Documentos/Pagina.aspx?id=3
+6) Diferença entre CEI e CNPJ: https://apoyofinanceiro.com.br/blog/post/qual-a-diferenca-entre-cei-e-cnpj
 
 
 
