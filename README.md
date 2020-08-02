@@ -82,7 +82,7 @@ Existem dois tipos de RAIS. A primeira delas é a de vínculos, em que cada obse
 Existe também os dados da Caged, que são dados mensais bem parecidos com a RAIS que, inclusive, podem ser extraídos no mesmo link que a RAIS. Não vou entrar em detalhes maiores nesse sentido para não sairmos do nosso foco.
 
 ## Dicionário
-Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2017, a mais recente até o momento. Caso não consiga fazê-lo, é possível obtê-lo através do link de referências que deixei mais embaixo. Na minha não tão humilde opinião (sou de leão), o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que ela não possui tantas variáveis. Sugiro que esteja sempre com esse arquivo aberto, pois ele salva vidas.
+Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2018, a mais recente até o momento, para fins de apresentação. Caso não consiga fazê-lo, é possível obtê-lo através do link de referências que deixei mais embaixo com a explicação na seçao seguinte. Na minha não tão humilde opinião (sou de leão), o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que ela não possui tantas variáveis. Sugiro que esteja sempre com esse arquivo aberto, pois ele salva vidas.
 
 ## A base de dados
 Hora de extrair a base! Quero que abra o segundo link na aba seguinte, aperte um botão verde escrito "clique aqui" (ao lado de "Para acessar a base"), e siga: RAIS/ - 2017/ - AP2017.7z para baixar o arquivo compactado referente ao Amapá do ano de 2017. Ao descompactá-lo, você terá acesso ao arquivo .txt referente ao estado. Quero que deixe em uma pasta no disco C, cujo caminho é C:\Dados\Rais\.
@@ -97,7 +97,7 @@ Irei estimar uma equação de salários para os contratos formais no estado de A
 1) Site da RAIS: http://www.rais.gov.br/sitio/index.jsf
 2) Onde se extrai os microdados da RAIS e o seu layout: http://pdet.mte.gov.br/microdados-rais-e-caged
 3) Explicação da CAGED e outros detalhes da RAIS, por Guilherme Jacob: https://guilhermejacob.github.io/2017/11/rais-caged-r/
-4) Um apresentação do Luiz Júnior, com outros detalhes: https://www.ufjf.br/econs/files/2010/05/RAIS-e-CAGED-Introdu%c3%a7%c3%a3o-%c3%a0s-Bases-de-Dados-12-de-Abril-de-2010.pdf
+4) Um apresentação de Luiz Júnior, com outros detalhes: https://www.ufjf.br/econs/files/2010/05/RAIS-e-CAGED-Introdu%c3%a7%c3%a3o-%c3%a0s-Bases-de-Dados-12-de-Abril-de-2010.pdf
 5) Simples Nacional: http://www8.receita.fazenda.gov.br/SimplesNacional/Documentos/Pagina.aspx?id=3
 6) Diferença entre CEI e CNPJ: https://apoyofinanceiro.com.br/blog/post/qual-a-diferenca-entre-cei-e-cnpj
 
