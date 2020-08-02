@@ -85,7 +85,11 @@ Existe também os dados da Caged, que são dados mensais bem parecidos com a RAI
 Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2018, a mais recente até o momento. Caso não consiga fazê-lo, é possível obtê-lo através do link de referências que deixei mais embaixo. Na minha não tão humilde opinião (sou de leão), o dicionário é bem mais simples que de outras bases de dados públicas, como a PNADC e o Censo, já que ela não possui tantas variáveis. Sugiro que esteja sempre com esse arquivo aberto, pois ele salva vidas.
 
 ## A base de dados
-Hora de trabalhar com a extração da base! Quero que abra o segundo link na aba seguinte, aperte um botão verde escrito "clique aqui" (ao lado de "Para acessar a base"), e siga: RAIS/ - 2017/ - AP2017.7z/ para baixar o arquivo .txt referente ao Amapá do ano de 2017. 
+Hora de extrair a base! Quero que abra o segundo link na aba seguinte, aperte um botão verde escrito "clique aqui" (ao lado de "Para acessar a base"), e siga: RAIS/ - 2017/ - AP2017.7z para baixar o arquivo compactado referente ao Amapá do ano de 2017. Ao descompactá-lo, você terá acesso ao arquivo .txt referente ao estado. Quero que deixe em uma pasta no disco C, cujo caminho é C:\Dados\Rais\.
+
+Também é possível baixar o dicionário, ou layout, nesse link, mas seguindo o caminho RAIS/ - Layouts/ - vínculos/ - rais_vinculos_layout_2017.xls. (Estou usando o layout 2018 para essa exposição, já que a estrutura da base não mudou de um ano para o outro. Caso queria o de 2017, por ser o correto, é só baixar)
+
+Irei estimar uma equação de salários para os trabalhadores internacionais no estado de Amapá. Deixo um do-file com comentários nesse repositório.
 
 
 # Links de referências
