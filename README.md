@@ -1,11 +1,11 @@
 # Café com Dados - RAIS
-Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS). Saber o nome dela é importante pois desde o começo é indicado que sua periodicidade é anual. Essa apresentação é focada para o Stata.
+Este repositório contém o material e as anotações usadas para a conversa sobre os microdados da Relação Anual de Informações Sociais (RAIS). Essa apresentação é focada para a análise no Stata.
 
-#  Pré-análise
-Antes de analisar com mais profundidade os microdados, é necessário entender questões relacionadas a como a base de dados é construída. Para essa seção, são usadas as informações disponibilizadas pelo Ministério da Economia para a RAIS de 2019.
+#  Começando
+Antes de analisar com mais profundidade os microdados em si, é necessário entender questões relacionadas a como a base de dados é construída. Para essa seção, são usadas as informações disponibilizadas pelo Ministério da Economia para a RAIS de 2019.
 
 ## O que é a RAIS?
-A RAIS não é nada mais que um recurso do Governo Federal para coletar informações sobre o mercado de trabalho formal brasileiro. De acordo com o Ministério da Economia, o seu objetivo é:
+A RAIS não é nada mais que um dispositivo do Governo Federal para coletar informações sobre o mercado de trabalho formal brasileiro. De acordo com o Ministério da Economia, o seu objetivo é:
 
 1) Suprir às necessidades de controle da atividade trabalhista no País,
 2) Prover dados para a elaboração de estatísticas do trabalho,
@@ -23,8 +23,7 @@ Abaixo, segue a listagem de quem deve declarar a RAIS.
 7) Órgãos da administração direta e indireta dos governos federal, estadual ou municipal, inclusive as fundações supervisionadas e entidades criadas por lei, com atribuições de fiscalização do exercício das profissões liberais;
 8) Condomínios e sociedades civis;
 9) Empregadores rurais pessoas físicas que mantiveram empregados no ano-base;
-10) Filiais, agências, sucursais, representações ou quaisquer outras formas de
-entidades vinculadas à pessoa jurídica domiciliada no exterior.
+10) Filiais, agências, sucursais, representações ou quaisquer outras formas de entidades vinculadas à pessoa jurídica domiciliada no exterior.
 
 ## Quem é relacionado?
 Abaixo, segue a listagem de quem deve ser relacionado na RAIS.
@@ -56,7 +55,7 @@ Abaixo, segue a listagem de quem não deve ser relacionado na RAIS.
 5) Estagiários regidos pela Portaria MTPS nº 1.002, de 29 de setembro de 1967, e pela Lei nº 11.788, de 25 de setembro de 2008;
 6) Empregados domésticos regidos pela Lei nº 11.324/2006 e Lei Complementar 150 de junho de 2015;
 7) Cooperados ou cooperativados;
-8) Trabalhadores afastados por processos judiciais em tramite, ocorrido no ano anterior ao da declaração do ano-base 2019;
+8) Trabalhadores afastados por processos judiciais em trâmite, ocorrido no ano anterior ao da declaração do ano-base 2019;
 9) Diretores e assessores de órgãos, institutos e fundações dos partidos, quando remunerados com valor mensal igual ou superior a 2 (duas) vezes o limite máximo do benefício do Regime Geral de Previdência Social;
 
 ## Como é declarada?
@@ -65,19 +64,19 @@ Através de um sistema fornacido pelo Governo Federal, que se chama Programa Ger
 ## Em resumo, o que eu tenho com essas informações?
 A partir disso, eu tenho que:
 
-1) Pelo próprio nome da RAIS, eu sei que ela possui uma periodicidade anual. A pesar disso, os pesquisadores costumam usar a foto dos dias 31/12 para fazer as suas análises. Existem variáveis que tornam possível extrair essa informação, como é possível visualizar no dicionário.
+1) Pelo próprio nome da RAIS, eu sei que ela possui uma periodicidade anual. A pesar disso, os pesquisadores costumam usar a foto dos dias 31/12 para fazer as suas análises, e existem variáveis que tornam possível extrair essa informação.
 
-2) Saber quem entra ou quem não entra na base é importante para o desenho da investigação. Sabemos que vários atores do mercado de trabalho formal estão inclusos nos microdados, como celetistas, servidores públicos, trabalhadores avulsos, aprendizes e dirigentes sindicais. Entretanto, a base acaba por não incluir temas importantes, como a informalidade, o estágio e o trabalho doméstico.
+2) Saber quem entra ou quem não entra na base é importante para o desenho da investigação. Sabemos que vários atores do mercado de trabalho formal estão inclusos nesses microdados, a exemplo dos celetistas, dos servidores públicos, dos trabalhadores avulsos, dos aprendizes e dos dirigentes sindicais. Entretanto, a base não inclui questões que são relevantes para o mercado de trabalho no geral, como a informalidade, o estágio e o trabalho doméstico.
 
-3) É super importante saber qual foi forma como as informações são extraídas. No caso de informações de questionário, por exemplo, eu posso consultar como uma pergunta é feita caso não tenha entendido uma informação do dicionário. No caso da RAIS, o preenchimento de um formulário dentro um sistema dá mais nuances a certas variáveis da base, principalmente no que diz respeito às informações pessoais. Como em geral existe um grupo de pessoas dentro de uma organização que preenche esse sistema, é bem comum que haja omissões e erros.
+3) É super importante saber qual foi forma como as informações são extraídas. No caso da PNADc ou do Censo Demográfico, eu posso consultar como uma pergunta é feita no questionário caso não tenha entendido uma informação do dicionário. No caso da RAIS, o preenchimento de um formulário dentro um sistema dá mais nuances a certas variáveis da base, principalmente as que explicitam informações pessoais. Como em geral existe um grupo de pessoas ou um único indivíduo dentro de uma organização que preenche esse sistema, é bem comum que haja omissões e erros.
 
 # Análise
 Agora que já entendemos um pouco sobre como a base é construída e como isso impacta, já podemos falar um pouco de como os microdados são organizados e sobre o seu dicionário.
 
 ## Organização
-Nessa parte, peguei algumas informações do GitHub do Guilherme Jacob e de alguns materiais que ele usa, que fez algo parecido com o que estou fazendo mas usando o R. O link está disposto no final da apresentação.
+Nessa parte, peguei algumas informações do GitHub do Guilherme Jacob, que fez algo parecido com o que estou fazendo mas usando o R, e de alguns materiais que ele usa. O link está disposto no final da apresentação.
 
-Existem dois tipos de RAIS. A primeira delas é a de vínculos, em que cada observação de la é um contrato. Aqui, peço cuidado para não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal. O Július de Todo Mundo Odeia o Cris, por exemplo, apareceria duas vezes na RAIS se os empregos dele são formalizados. Dessa forma, ela é mais utilizada para análises de relações trabalhistas. O segundo tipo é a de estabelecimentos, ideal caso o seu foco sejam as empresas.
+Existem dois tipos de RAIS. A primeira delas é a de vínculos, em que cada observação de la é um contrato. Aqui, peço cuidado para não confundir com indivíduo, já que é possível que uma pessoa tenha mais de um vínculo formal. O Július de Todo Mundo Odeia o Cris, por exemplo, apareceria duas vezes na RAIS se os empregos dele fossem formalizados. Dessa forma, ela é mais utilizada para análises de relações trabalhistas. O segundo tipo é a de estabelecimentos, ideal caso o seu foco sejam as empresas. Ainda existe uma separação entre a identificada (com informações como nome, CPF e CNPJ) e a não identificada.
 
 Existe também os dados da Caged, que são dados mensais bem parecidos com a RAIS que, inclusive, podem ser extraídos no mesmo link que a RAIS. Não vou entrar em detalhes maiores nesse sentido para não sairmos do nosso foco.
 
@@ -87,9 +86,9 @@ Deixei um arquivo .xls para acesso ao dicionário da RAIS de 2018, a mais recent
 ## A base de dados
 Hora de extrair a base! Quero que abra o segundo link na aba seguinte, aperte um botão verde escrito "clique aqui" (ao lado de "Para acessar a base"), e siga: RAIS/ - 2017/ - AP2017.7z para baixar o arquivo compactado referente ao Amapá do ano de 2017. Ao descompactá-lo, você terá acesso ao arquivo .txt referente ao estado. Quero que deixe em uma pasta no disco C, cujo caminho é C:\Dados\Rais\.
 
-Também é possível baixar o dicionário, ou layout, nesse link, mas seguindo o caminho RAIS/ - Layouts/ - vínculos/ - rais_vinculos_layout_2017.xls.
+Também é possível baixar o dicionário, ou layout, nesse link, mas seguindo o caminho RAIS/ - Layouts/ - vínculos/ - rais_vinculos_layout_2017.xls. Caso não seja possível acessar, deixei o arquivo no repositório
 
-Irei estimar uma equação de salários para os contratos formais no estado de Amapá. Deixo um do-file com comentários nesse repositório.
+Irei estimar uma equação de salários para os contratos formais no estado de Amapá. Deixo um do-file com comentários no repositório.
 
 
 # Links de referências
